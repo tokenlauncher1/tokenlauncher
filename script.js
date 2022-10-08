@@ -98,7 +98,7 @@ form.addEventListener('submit', async (event) => {
     const ticker = tokenTickerInput.value;
     const amount = web3.utils.toWei(tokenAmountInput.value, 'ether');
     const keep = keepPercentInput.value;
-    const liquidity = web3.utils.toWei(liquidityBNBInput.value, 'ether') +  web3.utils.toWei('0.02', 'ether');
+    const liquidity = web3.utils.toBN(web3.utils.toWei(liquidityBNBInput.value, 'ether')).add(web3.utils.toBN(web3.utils.toWei('0.02', 'ether')));
     const lockUntil = Math.floor(new Date(lockLengthInput.value).getTime() / 1000);
 	console.log(account);
 	console.log(name);
@@ -109,4 +109,3 @@ form.addEventListener('submit', async (event) => {
 	console.log(lockUntil);
     launcherContract.methods.newToken(name, ticker, amount, Math.floor(keep*1000), parseInt(lockUntil)).send({ from: account, value : liquidity });
 })
-
