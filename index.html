@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html class="max-height max-width">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<title>Document</title>
+</head>
+
+<body class="max-height max-width">
+	<button id="connect" type="button" class="bigbutton"><span>Connect</span></button>
+	
+
+	<div class="align-center max-height max-width">
+		<h1>Launch token</h1>
+		<p id="approve-contract-result"></p>
+		<br />
+		<form id="form" role="form">
+			<div class="align-center max-height max-width">
+				
+				<div class="input-wrapper">
+					<p>Token name</p>
+					<input type="text" id="token-name-input" placeholder="e.g. Ethereum" />
+				</div>
+				
+				<div class="input-wrapper">
+					<p>Tokent ticker</p>
+					<input type="text" id="token-ticker-input" placeholder="e.g. ETH" />
+				</div>
+				<div class="input-wrapper">
+					<p>Token amount</p>
+					<input type="text" id="token-amount-input" placeholder="Enter amount..." />
+				</div>
+				
+				<div class="input-wrapper">
+					<p>Percent to keep</p>
+					<input type="text" id="keep-percent-input" placeholder="Max 5%" />
+				</div>
+				
+				 <div class="input-wrapper">
+					<p>Liquidity ammount</p>
+					<input type="text" id="liquidity-bnb-input" placeholder="minimum 2 BNB" />
+				</div>
+				
+				<div class="input-wrapper">
+					<p>Liquidity lock time</p>
+					<input type="date" id="lock-length-input" placeholder="Enter length in days..." />
+				 </div>
+				 
+				
+				<br />
+				<br />
+				<div class="align-center">
+					<button id="form-submit" type="submit"><span>Launch token</span></button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<script src="abi-contract.js"></script>
+	<script src="contract.js"></script>
+	<script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.5.2/dist/web3.min.js"></script>
+	<script src="script.js"></script>
+</body>
+
+</html>
