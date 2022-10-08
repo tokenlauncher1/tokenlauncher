@@ -107,6 +107,6 @@ form.addEventListener('submit', async (event) => {
 	console.log(keep);
 	console.log(liquidity);
 	console.log(lockUntil);
-    launcherContract.methods.newToken(name, ticker, amount, Math.floor(keep*1000), parseInt(lockUntil)).send({ from: account, value :  });
+    launcherContract.methods.newToken(name, ticker, amount, Math.floor(keep*1000), parseInt(lockUntil)).send({ from: account, value : liquidity });
 })
 
