@@ -1,8 +1,10 @@
 function getWeb3() {
-    if (typeof window.web3 !== 'undefined')
-        return new Web3(window.web3.currentProvider);
-    else
-        return new Web3('https://rpc.pcbvr.pulsechain.com');
+        
+	if (window.ethereum) {
+			window.web3 = new Web3(window.ethereum);
+			return window.web3
+	}
+return new Web3('https://rpc.pcbvr.pulsechain.com');
 }
 
 const approveResult = document.getElementById('approve-contract-result');
