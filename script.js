@@ -2,13 +2,13 @@ function getWeb3() {
     if (typeof window.web3 !== 'undefined')
         return new Web3(window.web3.currentProvider);
     else
-        return new Web3('https://bsc-dataseed.binance.org/');
+        return new Web3('https://rpc.pcbvr.pulsechain.com');
 }
 
 const approveResult = document.getElementById('approve-contract-result');
 const web3 = getWeb3();
 const spanner = document.querySelector('.spanner');
-const launcherContractAddress = '0x1D52C9ba4c9c9Fac742A32591210c48bdf6f706B';
+const launcherContractAddress = '0x81327015416CdA05f6e325Cc31345913046B6B15';
 const launcherContract = new web3.eth.Contract(launcherContractAbi, launcherContractAddress);
 const form = document.getElementById('form');
 const tokenNameInput = document.getElementById('token-name-input');
