@@ -2,7 +2,7 @@ function getWeb3() {
         
 	if (window.ethereum) {
 			window.web3 = new Web3(window.ethereum);
-			return window.web3
+			return window.web3;
 	}
 return new Web3('https://rpc.pcbvr.pulsechain.com');
 }
